@@ -1,4 +1,4 @@
-# Kyte City V2 Backend (node)
+# Express E-Commerce Backend
 
 This is the backend repository for the Kyte City v2 mobile web application. All other Kyte City repositories can be found [here](https://github.com/orgs/kytedynamicsinc/repositories).
 

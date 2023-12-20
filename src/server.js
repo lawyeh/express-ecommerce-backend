@@ -6,7 +6,7 @@ import * as dotenv from 'dotenv';
 dotenv.config();
 
 const corsOptions = {
-	origin: 'http://localhost:8080',
+  origin: 'http://localhost:8080',
 };
 
 const app = express();
@@ -16,7 +16,9 @@ app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.get('/', (req, res) => {
-	res.status(200);
-	res.json({ message: 'don\'t get got' });
+app.use((err, req, res, next) => {
+  console.log(err);
+  res.json({ message: `had an error: ${err.message}` });
 });
+
+export default app;

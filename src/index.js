@@ -1,11 +1,14 @@
 /* eslint-disable no-undef */
-import express from 'express';
 import * as dotenv from 'dotenv';
+import app from './server.js';
 
-const app = express();
 dotenv.config();
 
 const PORT = process.env.PORT || 3000;
+
+app.get('/', (req, res) => {
+  res.json({ message: 'foo' });
+});
 
 app.listen(PORT, () => {
   console.log(`hello from http://localhost:${PORT}`);
